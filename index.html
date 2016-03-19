@@ -95,13 +95,9 @@
 				// sound spheres
 
 				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
-				mesh1.position.x = (Math.random() - 0.5) * 2000;
-				mesh1.position.y = (Math.random() - 0.5) * 2000;
-				mesh1.position.z = (Math.random() - 0.5) * 2000;
-
-				mesh1.rotation.x = Math.random();
-				mesh1.rotation.y = Math.random();
-				mesh1.rotation.z = Math.random();
+				mesh1.position.x = (Math.random() - 0.5) * 1000;
+				mesh1.position.y = (Math.random() - 0.5) * 1000;
+				mesh1.position.z = (Math.random() - 0.5) * 1000;
 				scene.add( mesh1 );
 
 				var sound1 = new THREE.PositionalAudio( listener );
