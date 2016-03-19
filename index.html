@@ -59,9 +59,9 @@
 			var light, pointLight;
 
 			var mesh;
-			var material_sphere1, material_sphere2, material_sphere3, material_sphere5;
+			var material_sphere1, material_sphere2;
 
-			var analyser1, analyser2, analyser3, analyser5;
+			var analyser1, analyser2, analyser3;
 
 			var clock = new THREE.Clock();
 
@@ -91,7 +91,7 @@
 				material_sphere1 = new THREE.MeshPhongMaterial( { color: 0xffaa00, shading: THREE.FlatShading, shininess: 0 } );
 				material_sphere2 = new THREE.MeshPhongMaterial( { color: 0xff2200, shading: THREE.FlatShading, shininess: 0 } );
 				material_sphere3 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
-				material_sphere5 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
+
 				// sound spheres
 
 				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
@@ -139,29 +139,11 @@
 				sound3.setVolume(0.5);
 				mesh3.add(sound3);
 
-
-				//
-
-				var mesh5 = new THREE.Mesh( sphere, material_sphere5 );
-				mesh1.position.x = (Math.random() - 0.5) * 1000;
-				mesh1.position.y = (Math.random() - 0.5) * 1000;
-				mesh1.position.z = (Math.random() - 0.5) * 1000;
-				scene.add( mesh5 );
-
-				var sound5 = new THREE.PositionalAudio( listener );
-				sound2.load( 'sounds/376737_Skullbeatz___Bad_Cat_Maste.ogg' );
-				sound2.setRefDistance( 20 );
-				sound2.autoplay = true;
-				mesh2.add( sound5 );
-
-
-
 				// analysers
 
 				analyser1 = new THREE.AudioAnalyser( sound1, 32 );
 				analyser2 = new THREE.AudioAnalyser( sound2, 32 );
 				analyser3 = new THREE.AudioAnalyser( sound3, 32 );
-				analyser4 = new THREE.AudioAnalyser( sound5, 32 );
 
 				// global ambient audio
 
@@ -269,7 +251,6 @@
 				material_sphere1.emissive.b = analyser1.getData()[ 8 ] / 256;
 				material_sphere2.emissive.b = analyser2.getData()[ 8 ] / 256;
 				material_sphere3.emissive.b = analyser3.getData()[ 8 ] / 256;
-				material_sphere5.emissive.b = analyser5.getData()[ 8 ] / 256;
 
 				renderer.render( scene, camera );
 
