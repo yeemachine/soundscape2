@@ -44,7 +44,7 @@
 
 		<script src="three.min.js"></script>
 
-		<script src="js/controls/FirstPersonControls.js"></script>
+		<script src="js/controls/TrackballControls.js"></script>
 
 		<script src="js/Detector.js"></script>
 
@@ -206,7 +206,7 @@
 				container.appendChild( renderer.domElement );
 
 				//
-				controls = new THREE.FirstPersonControls( camera, renderer.domElement );
+				controls = new THREE.TrackballControls( camera, renderer.domElement );
 
 				controls.movementSpeed = 70;
 				controls.lookSpeed = 0.05;
