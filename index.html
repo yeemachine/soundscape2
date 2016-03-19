@@ -134,14 +134,14 @@
 
 				//
 				var mesh5 = new THREE.Mesh( sphere, material_sphere5 );
-				mesh1.position.set( -250, -30, 0 );
+				mesh5.position.set( -250, -30, 0 );
 				scene.add( mesh5 );
 
 				var sound5 = new THREE.PositionalAudio( listener );
-				sound1.load( 'sounds/358232_j_s_song.ogg' );
-				sound1.setRefDistance( 20 );
-				sound1.autoplay = true;
-				mesh1.add( sound5 );
+				sound5.load( 'sounds/snd-04.ogg' );
+				sound5.setRefDistance( 20 );
+				sound5.autoplay = true;
+				mesh5.add( sound5 );
 
 
 				// analysers
