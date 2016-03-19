@@ -92,7 +92,7 @@
 
 				material_sphere5 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
 				// sound spheres
-				for (var i = 0; i<100; i++){
+				for (var i = 0; i<50; i++){
 					var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
 					mesh1.position.x = (Math.random() - 0.5) * 1000;
 					mesh1.position.y = (Math.random() - 0.5) * 1000;
@@ -106,17 +106,7 @@
 					mesh1.add( sound1 );
 
 				}
-				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
-				mesh1.position.x = (Math.random() - 0.5) * 1000;
-				mesh1.position.y = (Math.random() - 0.5) * 1000;
-				mesh1.position.z = (Math.random() - 0.5) * 1000;
-				scene.add( mesh1 );
-
-				var sound1 = new THREE.PositionalAudio( listener );
-				sound1.load( 'sounds/358232_j_s_song.ogg' );
-				sound1.setRefDistance( 20 );
-				sound1.autoplay = true;
-				mesh1.add( sound1 );
+		
 
 				//
 
