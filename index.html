@@ -94,9 +94,9 @@
 				// sound spheres
 
 				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
-				mesh1.position.x = (Math.random() - 0.5) * 2000;
-				mesh1.position.y = (Math.random() - 0.5) * 2000;
-				mesh1.position.z = (Math.random() - 0.5) * 2000;
+				mesh1.position.x = (Math.random() - 0.5) * 1000;
+				mesh1.position.y = (Math.random() - 0.5) * 1000;
+				mesh1.position.z = (Math.random() - 0.5) * 1000;
 				scene.add( mesh1 );
 
 				var sound1 = new THREE.PositionalAudio( listener );
@@ -108,9 +108,9 @@
 				//
 
 				var mesh2 = new THREE.Mesh( sphere, material_sphere2 );
-				mesh2.position.x = (Math.random() - 0.5) * 2000;
-				mesh2.position.y = (Math.random() - 0.5) * 2000;
-				mesh2.position.z = (Math.random() - 0.5) * 2000;
+				mesh2.position.x = (Math.random() - 0.5) * 1000;
+				mesh2.position.y = (Math.random() - 0.5) * 1000;
+				mesh2.position.z = (Math.random() - 0.5) * 1000;
 				scene.add( mesh2 );
 
 				var sound2 = new THREE.PositionalAudio( listener );
@@ -126,9 +126,9 @@
 
 				//
 				var mesh5 = new THREE.Mesh( sphere, material_sphere5 );
-				mesh5.position.x = (Math.random() - 0.5) * 2000;
-				mesh5.position.y = (Math.random() - 0.5) * 2000;
-				mesh5.position.z = (Math.random() - 0.5) * 2000;
+				mesh5.position.x = (Math.random() - 0.5) * 1000;
+				mesh5.position.y = (Math.random() - 0.5) * 1000;
+				mesh5.position.z = (Math.random() - 0.5) * 1000;
 				scene.add( mesh5 );
 
 				var sound5 = new THREE.PositionalAudio( listener );
@@ -142,7 +142,7 @@
 
 				analyser1 = new THREE.AudioAnalyser( sound1, 32 );
 				analyser2 = new THREE.AudioAnalyser( sound2, 32 );
-				
+
 				analyser5 = new THREE.AudioAnalyser( sound5, 32 );
 
 				// global ambient audio
