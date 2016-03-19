@@ -80,7 +80,7 @@
 
 
 				scene = new THREE.Scene();
-
+				scene.fog = new THREE.FogExp2( 0x000000, 0.0025 );
 
 				light = new THREE.DirectionalLight( 0xffffff, 2 );
 				light.position.set( 0, 0.5, 1 ).normalize();
@@ -124,9 +124,7 @@
 
 
 				var mesh3 = new THREE.Mesh( sphere, material_sphere3 );
-				mesh1.position.x = (Math.random() - 0.5) * 1000;
-				mesh1.position.y = (Math.random() - 0.5) * 1000;
-				mesh1.position.z = (Math.random() - 0.5) * 1000;
+				mesh3.position.set( 0, 30, -250 );
 				scene.add( mesh3 );
 
 				var sound3 = new THREE.PositionalAudio( listener );
