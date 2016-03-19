@@ -61,7 +61,7 @@
 			var mesh;
 			var material_sphere1, material_sphere2, material_sphere5;
 
-			var analyser1, analyser2, analyser3, analyser5;
+			var analyser1, analyser2, analyser5;
 
 			var clock = new THREE.Clock();
 
@@ -89,7 +89,7 @@
 
 				material_sphere1 = new THREE.MeshPhongMaterial( { color: 0xffaa00, shading: THREE.FlatShading, shininess: 0 } );
 				material_sphere2 = new THREE.MeshPhongMaterial( { color: 0xff2200, shading: THREE.FlatShading, shininess: 0 } );
-				material_sphere3 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
+
 				material_sphere5 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
 				// sound spheres
 
@@ -122,19 +122,7 @@
 				//
 
 
-				var mesh3 = new THREE.Mesh( sphere, material_sphere3 );
-				mesh3.position.set( 0, 30, -250 );
-				scene.add( mesh3 );
 
-				var sound3 = new THREE.PositionalAudio( listener );
-				var oscillator = listener.context.createOscillator();
-				oscillator.type = 'sine';
-				oscillator.frequency.value = 144;
-				oscillator.start(0);
-				sound3.setNodeSource(oscillator);
-				sound3.setRefDistance( 20 );
-				sound3.setVolume(0.5);
-				mesh3.add(sound3);
 
 				//
 				var mesh5 = new THREE.Mesh( sphere, material_sphere5 );
@@ -174,7 +162,7 @@
 					   this.master = listener.getMasterVolume();
 					   this.firstSphere =  sound1.getVolume();
 					   this.secondSphere =  sound2.getVolume();
-					   this.thirdSphere = sound3.getVolume();
+
 					   this.Ambient =  sound4.getVolume();
 						 this.fifthSphere =  sound5.getVolume();
 				};
@@ -230,7 +218,7 @@
 
 				material_sphere1.emissive.b = analyser1.getData()[ 8 ] / 256;
 				material_sphere2.emissive.b = analyser2.getData()[ 8 ] / 256;
-				material_sphere3.emissive.b = analyser3.getData()[ 8 ] / 256;
+
 				material_sphere5.emissive.b = analyser5.getData()[ 8 ] / 256;
 
 				renderer.render( scene, camera );
