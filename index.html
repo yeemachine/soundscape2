@@ -59,9 +59,9 @@
 			var light, pointLight;
 
 			var mesh;
-			var material_sphere1, material_sphere2;
+			var material_sphere1, material_sphere2,material_sphere5;
 
-			var analyser1, analyser2, analyser3;
+			var analyser1, analyser2, analyser3, analyser5;
 
 			var clock = new THREE.Clock();
 
@@ -133,15 +133,15 @@
 				mesh3.add(sound3);
 
 				//
-				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
+				var mesh5 = new THREE.Mesh( sphere, material_sphere5 );
 				mesh1.position.set( -250, -30, 0 );
-				scene.add( mesh1 );
+				scene.add( mesh5 );
 
-				var sound1 = new THREE.PositionalAudio( listener );
+				var sound5 = new THREE.PositionalAudio( listener );
 				sound1.load( 'sounds/358232_j_s_song.ogg' );
 				sound1.setRefDistance( 20 );
 				sound1.autoplay = true;
-				mesh1.add( sound1 );
+				mesh1.add( sound5 );
 
 
 				// analysers
@@ -149,6 +149,7 @@
 				analyser1 = new THREE.AudioAnalyser( sound1, 32 );
 				analyser2 = new THREE.AudioAnalyser( sound2, 32 );
 				analyser3 = new THREE.AudioAnalyser( sound3, 32 );
+				analyser5 = new THREE.AudioAnalyser( sound5, 32 );
 
 				// global ambient audio
 
@@ -169,6 +170,7 @@
 					   this.secondSphere =  sound2.getVolume();
 					   this.thirdSphere = sound3.getVolume();
 					   this.Ambient =  sound4.getVolume();
+						 this.fifthSphere =  sound5.getVolume();
 				};
 				var GeneratorControls = function() {
 					   this.frequency = oscillator.frequency.value;
@@ -191,6 +193,9 @@
 
 				volumeFolder.add(soundControls, 'thirdSphere').min(0.0).max(1.0).step(0.01).onChange(function() {
 					sound3.setVolume(soundControls.thirdSphere);
+				});
+				volumeFolder.add(soundControls, 'fifthSphere').min(0.0).max(1.0).step(0.01).onChange(function() {
+					sound5.setVolume(soundControls.fifthSphere);
 				});
 				volumeFolder.add(soundControls, 'Ambient').min(0.0).max(1.0).step(0.01).onChange(function() {
 					sound4.setVolume(soundControls.Ambient);
@@ -256,6 +261,7 @@
 				material_sphere1.emissive.b = analyser1.getData()[ 8 ] / 256;
 				material_sphere2.emissive.b = analyser2.getData()[ 8 ] / 256;
 				material_sphere3.emissive.b = analyser3.getData()[ 8 ] / 256;
+				material_sphere5.emissive.b = analyser5.getData()[ 8 ] / 256;
 
 				renderer.render( scene, camera );
 
