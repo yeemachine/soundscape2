@@ -59,9 +59,9 @@
 			var light, pointLight;
 
 			var mesh;
-			var material_sphere1, material_sphere2;
+			var material_sphere1, material_sphere2, material_sphere3, material_sphere5;
 
-			var analyser1, analyser2, analyser3;
+			var analyser1, analyser2, analyser3, analyser5;
 
 			var clock = new THREE.Clock();
 
@@ -91,7 +91,7 @@
 				material_sphere1 = new THREE.MeshPhongMaterial( { color: 0xffaa00, shading: THREE.FlatShading, shininess: 0 } );
 				material_sphere2 = new THREE.MeshPhongMaterial( { color: 0xff2200, shading: THREE.FlatShading, shininess: 0 } );
 				material_sphere3 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
-
+				material_sphere5 = new THREE.MeshPhongMaterial( { color: 0x6622aa, shading: THREE.FlatShading, shininess: 0 } );
 				// sound spheres
 
 				var mesh1 = new THREE.Mesh( sphere, material_sphere1 );
